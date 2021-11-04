@@ -1,0 +1,15 @@
+@import '../../../scss/variables';
+
+.Footer {
+  width: 100%;
+  padding: 4rem;
+  background-color: $clr-black;
+  color: $clr-white;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.Branch {
+  color: $clr-primary-5;
+}
