@@ -1,0 +1,42 @@
+@import '../../scss/variables';
+
+button {
+  border: none;
+  outline: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Cart Button */
+.CartButton,
+.AuthButton {
+  background-color: transparent;
+  color: $clr-grey-2;
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-right: 0.5rem;
+  }
+}
+
+.CartIcon {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.NumItems {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: $clr-primary-5;
+  top: -50%;
+  right: -2rem;
+  font-size: 1.4rem;
+  color: $clr-white;
+}

@@ -1,0 +1,41 @@
+@import '../../../scss/variables';
+
+.NavBar {
+  max-width: 90vw;
+  margin: auto;
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: $clr-grey-4;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  font-size: 1.8rem;
+}
+
+nav a {
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  &:hover {
+    border-bottom: 2px solid $clr-primary-5;
+  }
+
+  &:not(:last-child) {
+    margin-right: 1.2rem;
+  }
+}
+
+.Actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & > *:not(:last-child) {
+    margin-right: 3rem;
+  }
+}
