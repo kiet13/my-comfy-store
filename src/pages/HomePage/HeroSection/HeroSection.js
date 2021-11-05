@@ -3,8 +3,11 @@ import styles from './HeroSection.module.scss'
 import { PrimaryButton } from '../../../components/Buttons'
 import HeroImg1 from '../../../assets/hero-bcg.jpeg'
 import HeroImg2 from '../../../assets/hero-bcg-2.jpeg'
+import { useNavigate } from 'react-router-dom'
 
 export default function HeroSection() {
+  const navigate = useNavigate()
+
   return (
     <section className={styles.HeroSection}>
       <div className={styles.HeroContent}>
@@ -15,7 +18,9 @@ export default function HeroSection() {
           aperiam odio ducimus, obcaecati libero et quia tempora excepturi quis
           alias?
         </p>
-        <PrimaryButton>SHOP NOW</PrimaryButton>
+        <PrimaryButton clicked={() => navigate('/products')}>
+          SHOP NOW
+        </PrimaryButton>
       </div>
       <div className={styles.HeroImages}>
         <img className={styles.HeroImage1} src={HeroImg1} alt='hero1' />
