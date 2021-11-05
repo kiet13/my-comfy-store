@@ -1,4 +1,5 @@
 @import '../../../scss/variables';
+@import '../../../scss/mixins';
 
 .Footer {
   width: 100%;
@@ -8,8 +9,17 @@
   text-align: center;
   position: absolute;
   bottom: 0;
+
+  .Branch {
+    color: $clr-primary-5;
+  }
 }
 
-.Branch {
-  color: $clr-primary-5;
+.SideBarShow {
+  @include respond(tab-port) {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 50;
+  }
 }

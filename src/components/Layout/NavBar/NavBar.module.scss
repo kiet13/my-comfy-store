@@ -1,41 +1,60 @@
 @import '../../../scss/variables';
+@import '../../../scss/mixins';
 
 .NavBar {
-  max-width: 90vw;
-  margin: auto;
+  max-width: 100vw;
+  padding: 0 4rem;
   height: 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+  background-color: $clr-white;
 
-a {
-  text-decoration: none;
-  color: $clr-grey-4;
-  padding: 0.5rem 0.8rem;
-  cursor: pointer;
-  letter-spacing: 0.1rem;
-  font-size: 1.8rem;
-}
-
-nav a {
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s;
-  &:hover {
-    border-bottom: 2px solid $clr-primary-5;
+  a {
+    text-decoration: none;
+    color: $clr-grey-4;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    font-size: 1.8rem;
   }
 
-  &:not(:last-child) {
-    margin-right: 1.2rem;
+  nav {
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  nav a {
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    &:hover {
+      border-bottom: 2px solid $clr-primary-5;
+    }
+
+    &:not(:last-child) {
+      margin-right: 1.2rem;
+    }
+  }
+
+  .Actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > *:not(:last-child) {
+      margin-right: 3rem;
+    }
   }
 }
 
-.Actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  & > *:not(:last-child) {
-    margin-right: 3rem;
+.SideBarShow {
+  @include respond(tab-port) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 4rem;
+    z-index: 50;
   }
 }

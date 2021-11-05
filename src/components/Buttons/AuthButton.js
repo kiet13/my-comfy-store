@@ -5,7 +5,7 @@ import styles from './Button.module.scss'
 export default function AuthButton({ auth, clicked }) {
   return (
     <button className={styles.AuthButton} onClick={clicked}>
-      <span>{auth ? 'Logout' : 'Login'}</span>
+      <span className={styles.Text}>{auth ? 'Logout' : 'Login'}</span>
       <FaUserPlus />
     </button>
   )

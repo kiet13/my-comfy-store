@@ -1,0 +1,44 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.SideBar {
+  position: fixed;
+  top: 8rem;
+  left: 0;
+  height: calc(100vh - 18rem);
+  display: none;
+  transition: all 0.4s;
+  background-color: rgba($clr-primary-10, 0.4);
+  z-index: 50;
+
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    padding: 2rem 4rem;
+    text-decoration: none;
+    color: $clr-grey-2;
+    letter-spacing: 0.1rem;
+    font-size: 2.4rem;
+    transition: $transition;
+
+    &:hover {
+      background-color: rgba($clr-primary-10, 0.8);
+      padding-left: 5rem;
+    }
+  }
+}
+
+.Show {
+  width: 100%;
+  opacity: 1;
+}
+
+.Hidden {
+  width: 0rem;
+  opacity: 0;
+}

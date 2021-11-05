@@ -2,13 +2,17 @@ import React from 'react'
 import styles from './NavBar.module.scss'
 import Logo from '../../../assets/logo.svg'
 import { Link, useNavigate } from 'react-router-dom'
-import { AuthButton, CartButton } from '../../Buttons'
+import { AuthButton, CartButton, CollapseButton } from '../../Buttons'
 
-export default function NavBar() {
+export default function NavBar({ showSideBar, onSideBarToggled }) {
   const navigate = useNavigate()
-
+  const classes = [styles.NavBar]
+  if (showSideBar) {
+    classes.push(styles.SideBarShow)
+  }
   return (
-    <div className={styles.NavBar}>
+    <div className={classes.join(' ')}>
+      <CollapseButton showSideBar={showSideBar} clicked={onSideBarToggled} />
       <Link to='/'>
         <img src={Logo} alt='Logo' style={{ width: '18rem', height: 'auto' }} />
       </Link>
