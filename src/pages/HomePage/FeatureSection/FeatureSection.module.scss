@@ -1,0 +1,67 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.FeatureSection {
+  margin-top: -0.5rem;
+  width: 100%;
+  background-color: $clr-grey-10;
+  padding: 5rem 0;
+}
+
+.FeatureHeading {
+  display: block;
+  width: 50rem;
+  margin: auto;
+  text-align: center;
+  font-size: 3.6rem;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+  font-weight: 800;
+  position: relative;
+
+  &::after {
+    display: block;
+    content: '';
+    height: 0.4rem;
+    width: 10rem;
+    background-color: $clr-primary-5;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.FeatureContent {
+  display: grid;
+  width: 115rem;
+  margin: auto;
+  grid-gap: 5rem;
+  padding: 5rem 0;
+  grid-template-columns: repeat(3, 1fr);
+  height: 35rem;
+
+  @include respond(tab-land) {
+    width: 110rem;
+    grid-gap: 3rem;
+  }
+
+  @media screen and (max-width: 63em) {
+    width: 95rem;
+  }
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: auto;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+    height: auto;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}

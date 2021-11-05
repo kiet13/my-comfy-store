@@ -1,0 +1,29 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.ProductImage {
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+
+  @include respond(phone) {
+    height: 30rem;
+  }
+}
+
+.ProductInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ProductName {
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  color: $clr-grey-1;
+}
+
+.ProductPrice {
+  color: $clr-primary-5;
+}
