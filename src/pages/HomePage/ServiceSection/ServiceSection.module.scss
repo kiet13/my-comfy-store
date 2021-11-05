@@ -1,0 +1,92 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.ServiceSection {
+  width: 100%;
+  background-color: $clr-primary-10;
+
+  @include respond(tab-port) {
+    padding-bottom: 3rem;
+  }
+}
+
+.ServiceHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 115rem;
+  margin: auto;
+  padding-top: 5rem;
+  color: $clr-primary-1;
+
+  @include respond(tab-land) {
+    width: 110rem;
+  }
+
+  @media screen and (max-width: 63em) {
+    width: 95rem;
+  }
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 5rem;
+    padding-bottom: 0rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1 {
+    width: 35rem;
+    font-size: 3.4rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    line-height: 1.1;
+  }
+
+  p {
+    width: 60rem;
+    line-height: 1.5;
+    color: $clr-primary-3;
+
+    @include respond(tab-port) {
+      margin-top: 2rem;
+    }
+
+    @include respond(phone) {
+      width: 40rem;
+    }
+  }
+}
+
+.ServiceContent {
+  display: grid;
+  width: 115rem;
+  margin: auto;
+  grid-gap: 5rem;
+  padding: 5rem 0;
+  grid-template-columns: repeat(3, 1fr);
+
+  @include respond(tab-land) {
+    width: 110rem;
+    grid-gap: 3rem;
+  }
+
+  @media screen and (max-width: 63em) {
+    width: 95rem;
+  }
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: auto;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+    height: auto;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
