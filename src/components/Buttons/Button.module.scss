@@ -8,6 +8,21 @@ button {
   cursor: pointer;
 }
 
+.PrimaryButton {
+  background-color: $clr-primary-5;
+  color: $clr-white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: $transition;
+
+  &:hover {
+    background-color: $clr-primary-7;
+    color: $clr-primary-1;
+  }
+}
+
 /* Cart Button */
 .CartButton,
 .AuthButton {
@@ -95,4 +110,15 @@ button {
   div {
     transform: scale(0);
   }
+}
+
+.SearchButton {
+  background-color: $clr-primary-5;
+  color: $clr-white;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
 }
