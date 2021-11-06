@@ -1,0 +1,79 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.Subscription {
+  width: 100%;
+  margin-top: -10rem;
+  padding: 20rem 10rem;
+  background-color: $clr-white;
+  display: flex;
+  flex-direction: column;
+
+  @include respond(tab-port) {
+    margin-top: 0rem;
+    padding: 10rem 2rem;
+  }
+
+  h1 {
+    letter-spacing: 0.1rem;
+    font-weight: 800;
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.SubContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  p {
+    line-height: 2;
+    width: 50%;
+    margin-right: 1rem;
+
+    @include respond(tab-port) {
+      width: 80%;
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+
+  form {
+    display: flex;
+  }
+
+  input {
+    font: inherit;
+    outline: none;
+    border: 2px solid $clr-black;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    padding: 0.8rem 2rem;
+    width: 40rem;
+  }
+
+  button {
+    padding: 0 1.2rem;
+    letter-spacing: 0.1rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background-color: $clr-primary-5;
+    border: 2px solid $clr-black;
+    border-left: none;
+    transition: $transition;
+
+    &:hover {
+      color: $clr-white;
+    }
+  }
+}
