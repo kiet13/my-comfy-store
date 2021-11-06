@@ -1,0 +1,69 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.About {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5rem 0;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    width: 40%;
+    max-height: 50rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+
+    @include respond(tab-port) {
+      width: 80%;
+      margin-bottom: 4rem;
+    }
+
+    @include respond(phone) {
+      width: 90%;
+    }
+  }
+}
+
+.AboutContent {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+
+  @include respond(tab-port) {
+    width: 80%;
+  }
+
+  @include respond(tab-port) {
+    width: 90%;
+  }
+
+  h1 {
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    font-size: 3.8rem;
+    font-weight: 800;
+    padding-bottom: 0.8rem;
+    margin-bottom: 2rem;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      height: 0.4rem;
+      width: 10rem;
+      background-color: $clr-primary-5;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  p {
+    line-height: 2;
+    color: $clr-grey-5;
+  }
+}
