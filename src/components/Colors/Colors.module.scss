@@ -1,0 +1,25 @@
+@import '../../scss/variables';
+.Colors {
+  display: flex !important;
+  align-items: center;
+}
+.Color {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  opacity: 0.6;
+  font-size: 1.4rem;
+  color: transparent;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+.ChoosedColor {
+  opacity: 1;
+  color: $clr-white;
+}
