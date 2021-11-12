@@ -9,6 +9,8 @@ export default function AddToCart({
   onItemIncreased,
   onItemDecreased,
 }) {
+  const isAvailable = maxItems > 0
+
   return (
     <div className={styles.AddToCart}>
       <div className={styles.ItemControls}>
@@ -23,12 +25,15 @@ export default function AddToCart({
         <button
           className={styles.Control}
           onClick={onItemIncreased}
-          disabled={numItems === maxItems}
+          disabled={numItems === maxItems || !isAvailable}
         >
           <FaPlus />
         </button>
       </div>
-      <PrimaryButton>Add To Cart</PrimaryButton>
+
+      <PrimaryButton disabled={!isAvailable}>
+        {isAvailable ? 'Add To Cart' : 'Out Of Stock'}
+      </PrimaryButton>
     </div>
   )
 }
