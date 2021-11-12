@@ -2,6 +2,7 @@
 @import '../../scss/mixins';
 
 button {
+  background-color: transparent;
   border: none;
   outline: none;
   font: inherit;
@@ -10,16 +11,22 @@ button {
 
 .PrimaryButton {
   background-color: $clr-primary-5;
-  color: $clr-white;
+  color: $clr-grey-10;
   padding: 1rem 1.5rem;
   border-radius: 0.3rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   transition: $transition;
 
-  &:hover {
+  &:hover:enabled {
     background-color: $clr-primary-7;
     color: $clr-primary-1;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: grey;
+    color: $clr-grey-10;
   }
 }
 
