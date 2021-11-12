@@ -3,7 +3,9 @@ import styles from './Footer.module.scss'
 
 export default function Footer({ showSideBar }) {
   const classes = [styles.Footer]
-  classes.push(styles.SideBarShow)
+  if (showSideBar) {
+    classes.push(styles.SideBarShow)
+  }
 
   return (
     <section className={classes.join(' ')}>
