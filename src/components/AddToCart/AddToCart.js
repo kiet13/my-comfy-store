@@ -8,6 +8,7 @@ export default function AddToCart({
   maxItems,
   onItemIncreased,
   onItemDecreased,
+  onCartAdded,
 }) {
   const isAvailable = maxItems > 0
 
@@ -31,7 +32,7 @@ export default function AddToCart({
         </button>
       </div>
 
-      <PrimaryButton disabled={!isAvailable}>
+      <PrimaryButton disabled={!isAvailable} clicked={onCartAdded}>
         {isAvailable ? 'Add To Cart' : 'Out Of Stock'}
       </PrimaryButton>
     </div>

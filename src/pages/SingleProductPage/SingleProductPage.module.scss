@@ -1,0 +1,107 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.SingleProduct {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ProductContent {
+  padding: 5rem 0;
+  display: flex;
+  justify-content: space-between;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+}
+
+.ProductImages {
+  width: 50%;
+
+  @include respond(tab-port) {
+    width: 100%;
+  }
+}
+
+.ProductInfo {
+  width: 45%;
+
+  @include respond(tab-port) {
+    width: 100%;
+    margin-top: 5rem;
+  }
+
+  & > * {
+    margin-bottom: 1rem;
+  }
+
+  .Name {
+    font-size: 4rem;
+    text-transform: capitalize;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+  }
+
+  .Reviews {
+    display: flex;
+    align-items: center;
+    span {
+      margin-left: 1rem;
+    }
+  }
+
+  .Price {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: $clr-primary-5;
+    letter-spacing: 0.2rem;
+  }
+
+  .Description {
+    color: $clr-grey-3;
+    font-size: 1.6rem;
+    line-height: 2;
+    margin-bottom: 1.5rem;
+  }
+
+  .Details {
+    font-size: 1.8rem;
+    color: $clr-grey-3;
+
+    p {
+      width: 100%;
+      padding-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    p:nth-child(3) {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid $clr-grey-8;
+    }
+
+    p:last-child {
+      margin-top: 2rem;
+    }
+
+    p > span:first-child {
+      font-weight: 800;
+      width: 12rem;
+    }
+
+    p > span:last-child {
+      text-transform: capitalize;
+      width: calc(100% - 12rem);
+    }
+
+    p > span {
+      text-align: left;
+      display: inline-block;
+    }
+  }
+}
