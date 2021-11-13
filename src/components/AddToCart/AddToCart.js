@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './AddToCart.module.scss'
-import { ProductControl } from '../ProductControl/ProductControl'
+import ProductControl from '../ProductControl/ProductControl'
 import { PrimaryButton } from '../Buttons'
 
 export default function AddToCart({
