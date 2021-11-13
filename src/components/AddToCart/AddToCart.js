@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './AddToCart.module.scss'
-import { FaMinus, FaPlus } from 'react-icons/fa'
+import { ProductControl } from '../ProductControl/ProductControl'
 import { PrimaryButton } from '../Buttons'
 
 export default function AddToCart({
@@ -14,24 +14,12 @@ export default function AddToCart({
 
   return (
     <div className={styles.AddToCart}>
-      <div className={styles.ItemControls}>
-        <button
-          className={styles.Control}
-          onClick={onItemDecreased}
-          disabled={numItems === 1}
-        >
-          <FaMinus />
-        </button>
-        <span className={styles.NumItems}>{numItems}</span>
-        <button
-          className={styles.Control}
-          onClick={onItemIncreased}
-          disabled={numItems === maxItems || !isAvailable}
-        >
-          <FaPlus />
-        </button>
-      </div>
-
+      <ProductControl
+        numItems={numItems}
+        maxItems={maxItems}
+        onItemDecreased={onItemDecreased}
+        onItemIncreased={onItemIncreased}
+      />
       <PrimaryButton disabled={!isAvailable} clicked={onCartAdded}>
         {isAvailable ? 'Add To Cart' : 'Out Of Stock'}
       </PrimaryButton>
