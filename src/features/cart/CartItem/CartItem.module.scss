@@ -1,0 +1,82 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.CartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  span {
+    width: 12rem;
+    text-align: center;
+  }
+
+  .ProductControl {
+    width: 12rem;
+    font-size: 2.4rem;
+  }
+
+  .ProductControl button {
+    font-size: initial;
+  }
+}
+
+.Item {
+  width: 28rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include respond(phone) {
+    width: 25rem;
+  }
+
+  img {
+    width: 12rem;
+    height: 8rem;
+    border-radius: 0.5rem;
+    object-fit: cover;
+
+    @include respond(phone) {
+      width: 10rem;
+    }
+  }
+}
+
+.ItemInfo {
+  h3 {
+    letter-spacing: 0.1rem;
+    color: $clr-grey-3;
+    text-transform: capitalize;
+  }
+
+  p {
+    color: $clr-grey-5;
+  }
+
+  .Color {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.2rem;
+    margin-left: 0.5rem;
+  }
+}
+
+.Price {
+  color: $clr-primary-5;
+  letter-spacing: 0.1rem;
+}
+
+.Subtotal {
+  color: $clr-grey-5;
+  letter-spacing: 0.1rem;
+
+  @include respond(phone) {
+    display: none;
+  }
+}

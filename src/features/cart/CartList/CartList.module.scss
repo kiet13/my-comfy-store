@@ -1,0 +1,63 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.CartList {
+  width: 100%;
+
+  .Heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  .Heading span {
+    width: 12rem;
+    text-align: center;
+    color: $clr-grey-5;
+    letter-spacing: 0.1rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  .Heading span:last-child {
+    width: 2.4rem;
+  }
+
+  .Heading .ItemHeading {
+    width: 28rem;
+  }
+
+  .CartItems {
+    padding: 4rem 0;
+    border-top: 1px solid $clr-grey-8;
+    border-bottom: 1px solid $clr-grey-8;
+  }
+
+  .Buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+  }
+
+  .Buttons .BackToShopping {
+    text-transform: capitalize;
+  }
+
+  .Buttons .Clear {
+    background-color: #222;
+    color: $clr-white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.3rem;
+    letter-spacing: 0.1rem;
+    transition: $transition;
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+}
