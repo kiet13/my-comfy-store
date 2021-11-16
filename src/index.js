@@ -6,7 +6,18 @@ import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react'
+import { getStateFromStorage, setStateToStorage } from './localStorage'
+import { cartHydrated } from './features/cart/cartSlice'
 import './scss/main.scss'
+
+store.subscribe(() => {
+  setStateToStorage({
+    cart: store.getState().cart,
+  })
+})
+
+const cartData = getStateFromStorage('cart')
+store.dispatch(cartHydrated(cartData))
 
 ReactDOM.render(
   <React.StrictMode>
