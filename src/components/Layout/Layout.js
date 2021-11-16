@@ -8,7 +8,7 @@ import Spinner from '../Spinner/Spinner'
 
 export default function Layout() {
   const [showSideBar, setShowSideBar] = useState(false)
-  const { isLoading } = useAuth0()
+  const { isAuthenticated, isLoading } = useAuth0()
 
   const classes = ['container']
 
@@ -23,7 +23,7 @@ export default function Layout() {
   } else {
     content = (
       <div className={classes.join(' ')}>
-        <SideBar show={showSideBar} />
+        <SideBar show={showSideBar} auth={isAuthenticated} />
         <NavBar
           showSideBar={showSideBar}
           onSideBarToggled={() => setShowSideBar(!showSideBar)}
