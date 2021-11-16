@@ -20,6 +20,7 @@ export default function CartItem({ item }) {
             Color:{' '}
             <span className={styles.Color} style={{ background: color }}></span>
           </p>
+          <small className={styles.SmallPrice}>{formatPrice(price)}</small>
         </div>
       </div>
       <span className={styles.Price}>{formatPrice(price)}</span>

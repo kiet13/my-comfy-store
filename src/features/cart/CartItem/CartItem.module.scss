@@ -67,9 +67,24 @@
   }
 }
 
+.SmallPrice {
+  color: $clr-primary-5;
+  letter-spacing: 0.1rem;
+  font-size: 1.4rem;
+  display: none;
+
+  @include respond(tab-port) {
+    display: inline-block;
+  }
+}
+
 .Price {
   color: $clr-primary-5;
   letter-spacing: 0.1rem;
+
+  @include respond(tab-port) {
+    display: none;
+  }
 }
 
 .Subtotal {
